@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 # Function to convert an image to a sketch
-def convert_to_sketch(image):
+def convert_to_sketch(image, ksize):
     # Convert the image to grayscale
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     
@@ -12,7 +12,7 @@ def convert_to_sketch(image):
     inverted_image = 255 - gray_image
     
     # Blur the inverted image
-    blurred = cv2.GaussianBlur(inverted_image, (21, 21), 0)
+    blurred = cv2.GaussianBlur(inverted_image, (ksize, ksize), 0)
     
     # Invert the blurred image
     inverted_blurred = 255 - blurred
@@ -29,16 +29,36 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png"])
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
-    st.image(image, caption='Uploaded Image.', use_column_width=True)
-
-    # Convert the uploaded image to an OpenCV image
     image = np.array(image.convert('RGB'))
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+    
+    # Display original image on the right side
+    col1, col2 = st.columns(2)
+    col1.image(image, caption='Uploaded Image', use_column_width=True)
+    
+    st.sidebar.title("Adjust Sketch Settings")
+    
+    # Slider for the user to adjust blur intensity
+    ksize = st.sidebar.slider("Blur Intensity", min_value=1, max_value=51, step=2, value=21)
+    
+    st.sidebar.write("Note: Higher values produce smoother sketches.")
 
     st.write("Converting to sketch...")
 
     # Convert the image to a sketch
-    sketch_image = convert_to_sketch(image)
+    sketch_image = convert_to_sketch(image, ksize)
 
-    # Display the sketch image
-    st.image(sketch_image, caption='Sketch Image.', use_column_width=True, channels='GRAY')
+    # Display the sketch image on the left side
+    col2.image(sketch_image, caption='Sketch Image', use_column_width=True, channels='GRAY')
+
+    # Make the app responsive
+    st.markdown(
+        """
+        <style>
+        [data-testid="stAppViewContainer"] {
+            flex-direction: column-reverse;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
