@@ -1,3 +1,4 @@
-sketchpy==0.1.7
-tk==0.1.0
-streamlit==1.32.2
+streamlit
+opencv-python-headless
+numpy
+pillow
