@@ -29,6 +29,45 @@ def ensure_odd(ksize):
         return ksize + 1
     return ksize
 
+
+
+def footer():
+    # Footer Section
+
+    st.markdown('<style>div.block-container{padding-bottom: 100px;,text-align: center;}</style>', unsafe_allow_html=True)
+    st.markdown("""------""")
+    st.markdown("""
+        <p  
+        align='center'>Developed by </p>
+        """, unsafe_allow_html=True)
+    st.markdown("""
+        <p  
+        align='center'>Gandham Mani Saketh</p>
+        """, unsafe_allow_html=True)
+
+   
+    st.markdown(""" <p align="center">If you want any assistances or have any  queries. just, feel free to reach out!</p>
+          <p align="center">
+        <a href="https://www.linkedin.com/in/gandhammanisaketh2421/" target="_blank">
+            <img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn" style="width:40px;"/>
+        </a>
+        <a href="https://github.com/GANDHAMMANI" target="_blank">
+            <img src="https://img.icons8.com/fluent/48/000000/github.png" alt="GitHub" style="width:40px;"/>
+        </a>
+        <a href="mailto:gandhammani2421@gmail.com" target="_blank">
+            <img src="https://img.icons8.com/fluent/48/000000/gmail.png" alt="GitHub" style="width:40px;"/>
+        </a>
+        <a href="https://www.instagram.com/mr.pandapal/">
+            <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram" style="width: 40px;">
+        </a>
+    </p>
+""", unsafe_allow_html=True)
+    st.markdown("""  <p align="center"> -Saketh07</p>""", unsafe_allow_html=True)
+
+
+
+
+
 # Streamlit app
 st.title("Sketch Magician")
 
@@ -51,7 +90,6 @@ if uploaded_file is not None:
     # Ensure the kernel size is odd
     ksize = ensure_odd(ksize)
     
-    st.sidebar.write("Note: Higher values produce smoother sketches.")
 
     try:
         # Convert the image to a sketch
@@ -74,6 +112,8 @@ if uploaded_file is not None:
                                data=sketch_image_io,
                                file_name="sketch_image.jpg",
                                mime="image/jpeg")
+            st.divider()
+            footer()
    
     except Exception as e:
         st.error(f"An error occurred: {e}")
