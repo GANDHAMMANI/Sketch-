@@ -29,7 +29,7 @@ def ensure_odd(ksize):
     return ksize
 
 # Streamlit app
-st.title("Sketch Magic: Convert Photos to AI Art")
+st.title("Sketch Magic->    Convert Photos to AI Art")
 
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png"])
 
