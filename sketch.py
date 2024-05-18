@@ -22,6 +22,12 @@ def convert_to_sketch(image, ksize):
     
     return sketch_image
 
+# Ensure ksize is an odd number
+def ensure_odd(ksize):
+    if ksize % 2 == 0:
+        return ksize + 1
+    return ksize
+
 # Streamlit app
 st.title("Image to Sketch Converter")
 
@@ -39,15 +45,22 @@ if uploaded_file is not None:
     st.sidebar.title("Adjust Sketch Settings")
     
     # Slider for the user to adjust blur intensity
-    ksize = st.sidebar.slider("Blur Intensity", min_value=1, max_value=200, step=2, value=21)
+    ksize = st.sidebar.slider("Blur Intensity", min_value=1, max_value=200, step=1, value=21)
+    
+    # Ensure the kernel size is odd
+    ksize = ensure_odd(ksize)
     
     st.sidebar.write("Note: Higher values produce smoother sketches.")
 
-    st.warning("Adjust the thickness as your wish at the sidebar which is present at your rightside")
+    st.write("Converting to sketch...")
 
-    # Convert the image to a sketch
-    sketch_image = convert_to_sketch(image, ksize)
+    try:
+        # Convert the image to a sketch
+        sketch_image = convert_to_sketch(image, ksize)
+        
+        # Display the sketch image on the left side
+        col2.image(sketch_image, caption='Sketch Image', use_column_width=True, channels='GRAY')
 
-    # Display the sketch image on the left side
-    col2.image(sketch_image, caption='Sketch Image', use_column_width=True, channels='GRAY')
-  
+   
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
