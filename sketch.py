@@ -43,7 +43,7 @@ if uploaded_file is not None:
     
     st.sidebar.write("Note: Higher values produce smoother sketches.")
 
-    st.warning("Adjust the thickness as your wish at the sidebar which "is present at your right side)
+    st.warning("Adjust the thickness as your wish at the sidebar which is present at your rightside")
 
     # Convert the image to a sketch
     sketch_image = convert_to_sketch(image, ksize)
