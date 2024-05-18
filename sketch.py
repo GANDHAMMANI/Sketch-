@@ -39,7 +39,7 @@ if uploaded_file is not None:
     st.sidebar.title("Adjust Sketch Settings")
     
     # Slider for the user to adjust blur intensity
-    ksize = st.sidebar.slider("Blur Intensity", min_value=1, max_value=51, step=2, value=21)
+    ksize = st.sidebar.slider("Blur Intensity", min_value=1, max_value=200, step=2, value=21)
     
     st.sidebar.write("Note: Higher values produce smoother sketches.")
 
