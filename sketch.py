@@ -29,7 +29,7 @@ def ensure_odd(ksize):
     return ksize
 
 # Streamlit app
-st.title("Image to Sketch Converter")
+st.title("Sketch Magic: Convert Photos to AI Art")
 
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png"])
 
@@ -42,7 +42,7 @@ if uploaded_file is not None:
     col1, col2 = st.columns(2)
     col1.image(image, caption='Uploaded Image', use_column_width=True)
     
-    st.header("Adjust Sketch Settings")
+    st.header("Adjust your Sketch as you wish 🤞")
     
     # Slider for the user to adjust blur intensity
     ksize = st.slider("Blur Intensity", min_value=1, max_value=200, step=1, value=21)
@@ -52,7 +52,7 @@ if uploaded_file is not None:
     
     st.sidebar.write("Note: Higher values produce smoother sketches.")
 
-    st.write("Converting to sketch...")
+    
 
     try:
         # Convert the image to a sketch
