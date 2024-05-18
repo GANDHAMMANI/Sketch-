@@ -112,8 +112,8 @@ if uploaded_file is not None:
                                data=sketch_image_io,
                                file_name="sketch_image.jpg",
                                mime="image/jpeg")
-            st.divider()
-            footer()
+    st.divider()
+    footer()
    
     except Exception as e:
         st.error(f"An error occurred: {e}")
