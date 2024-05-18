@@ -42,10 +42,10 @@ if uploaded_file is not None:
     col1, col2 = st.columns(2)
     col1.image(image, caption='Uploaded Image', use_column_width=True)
     
-    st.sidebar.title("Adjust Sketch Settings")
+    st.header("Adjust Sketch Settings")
     
     # Slider for the user to adjust blur intensity
-    ksize = st.sidebar.slider("Blur Intensity", min_value=1, max_value=200, step=1, value=21)
+    ksize = st.slider("Blur Intensity", min_value=1, max_value=200, step=1, value=21)
     
     # Ensure the kernel size is odd
     ksize = ensure_odd(ksize)
