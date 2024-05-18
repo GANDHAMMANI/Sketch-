@@ -2,6 +2,7 @@ import streamlit as st
 import cv2
 import numpy as np
 from PIL import Image
+import io
 
 # Function to convert an image to a sketch
 def convert_to_sketch(image, ksize):
@@ -52,15 +53,27 @@ if uploaded_file is not None:
     
     st.sidebar.write("Note: Higher values produce smoother sketches.")
 
-    
-
     try:
         # Convert the image to a sketch
         sketch_image = convert_to_sketch(image, ksize)
         
         # Display the sketch image on the left side
         col2.image(sketch_image, caption='Sketch Image', use_column_width=True, channels='GRAY')
-
+        
+        # Add a download button for the sketch image
+        download_sketch = st.button("Download Sketch Image")
+        if download_sketch:
+            # Convert the sketch image to bytes
+            sketch_image_bytes = cv2.imencode('.jpg', sketch_image)[1].tobytes()
+            
+            # Create a file-like object
+            sketch_image_io = io.BytesIO(sketch_image_bytes)
+            
+            # Download the sketch image as a file
+            st.download_button(label="Click to Download",
+                               data=sketch_image_io,
+                               file_name="sketch_image.jpg",
+                               mime="image/jpeg")
    
     except Exception as e:
         st.error(f"An error occurred: {e}")
