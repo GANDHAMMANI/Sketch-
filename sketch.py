@@ -50,15 +50,4 @@ if uploaded_file is not None:
 
     # Display the sketch image on the left side
     col2.image(sketch_image, caption='Sketch Image', use_column_width=True, channels='GRAY')
-  # Make the app responsive
-    st.markdown(
-        """
-        <style>
-        [data-testid="stAppViewContainer"] {
-            flex-direction: column-reverse;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-    
+  
