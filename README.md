@@ -7,7 +7,7 @@ Transform your photos into stunning pencil sketches with **Sketch Magician**, a 
 
 ## 📸 App Preview
 ![App Screenshot](https://github.com/user-attachments/assets/ae5a1800-50ca-4f65-afd1-a75cc75b6e87)
-)
+
 ## Features
 
 - **Image Upload**: Upload a JPG or PNG image to transform it into a pencil sketch.
