@@ -6,7 +6,8 @@ Transform your photos into stunning pencil sketches with **Sketch Magician**, a 
 
 
 ## 📸 App Preview
-![App Screenshot]([path/to/screenshot.png](https://github.com/user-attachments/assets/c6eb8578-3c49-4ae8-8d78-a90ca756951a))
+![App Screenshot](https://github.com/user-attachments/assets/ae5a1800-50ca-4f65-afd1-a75cc75b6e87)
+)
 ## Features
 
 - **Image Upload**: Upload a JPG or PNG image to transform it into a pencil sketch.
@@ -14,6 +15,13 @@ Transform your photos into stunning pencil sketches with **Sketch Magician**, a 
 - **Downloadable Sketch**: After processing, you can download the generated pencil sketch image.
 - **User-Friendly Interface**: The app is simple to use with a real-time preview of the sketch effect.
 - **Deployement**: The Deployement is done on the stremlit platform.
+
+
+### How It Works
+1. **Upload an Image:** Select a photo in JPG or PNG format using the file uploader.
+2. **Adjust Sketch Settings:** Use the "Blur Intensity" slider to modify the pencil sketch's detail and look.
+3. **Preview the Sketch:** The sketch is updated in real-time as you adjust the settings.
+4. **Download the Sketch:** Once you are happy with the result, click the "Download Sketch Image" button to save the final pencil sketch.
 
 
 ## 🚀 Demo
@@ -42,12 +50,6 @@ Start the app using the following command:
 streamlit run app.py
 ```
 This will launch the app in your default web browser.
-
-### How It Works
-1. **Upload an Image:** Select a photo in JPG or PNG format using the file uploader.
-2. **Adjust Sketch Settings:** Use the "Blur Intensity" slider to modify the pencil sketch's detail and look.
-3. **Preview the Sketch:** The sketch is updated in real-time as you adjust the settings.
-4. **Download the Sketch:** Once you are happy with the result, click the "Download Sketch Image" button to save the final pencil sketch.
 
 ### Contributing
 Feel free to fork this repository, make improvements, and submit pull requests. We welcome any bug fixes or new feature suggestions!
