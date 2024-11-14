@@ -1,70 +1,58 @@
 # 🎨 Sketch Magician
 
-Transform your photos into stunning pencil sketches with **Sketch Magician**, a web app built using Streamlit and OpenCV. This tool lets you adjust the sketch style by modifying the blur intensity and download the final sketch. It's ideal for artists, photographers, and anyone looking to experiment with creative effects.
+
+
+Transform your photos into stunning pencil sketches with **Sketch Magician**, a web app built using Streamlit and OpenCV. This tool allows users to adjust the sketch style by modifying the blur intensity and downloading the final sketch image. It's ideal for artists, photographers, and anyone experimenting with creative effects.
+
+
+## 📸 App Preview
+![App Screenshot]([path/to/screenshot.png](https://github.com/user-attachments/assets/c6eb8578-3c49-4ae8-8d78-a90ca756951a))
+## Features
+
+- **Image Upload**: Upload a JPG or PNG image to transform it into a pencil sketch.
+- **Customizable Sketch Effect**: Use an interactive slider to adjust the blur intensity and control the level of detail in the sketch.
+- **Downloadable Sketch**: After processing, you can download the generated pencil sketch image.
+- **User-Friendly Interface**: The app is simple to use with a real-time preview of the sketch effect.
+- **Deployement**: The Deployement is done on the stremlit platform.
+
 
 ## 🚀 Demo
 Check out the deployed app: [Sketch Magician on Streamlit](https://your-streamlit-app-link)
 
-## 📸 App Preview
-![App Screenshot](path/to/screenshot.png)
 
-## 📋 Features
-- **Image Upload:** Upload any JPEG or PNG image.
-- **Adjustable Sketch Intensity:** Modify the blur intensity to control sketch detail.
-- **Download Option:** Easily download the final sketch image.
-- **Responsive Design:** Optimized for desktops and mobile devices.
-- **Footer with Social Links:** Connect with the developer on LinkedIn, GitHub, and more.
 
-## 🛠️ How It Works
-1. **Convert to Grayscale:** The image is converted to grayscale.
-2. **Inversion and Blurring:** The grayscale image is inverted and blurred to create a base for sketching.
-3. **Division for Sketch Effect:** The original grayscale image is divided by the blurred image, resulting in a sketch effect.
+## Installation
 
-## 🎬 Quick Start
-Follow these steps to run Sketch Magician locally on your machine.
+Follow these steps to run the app locally:
 
-### Prerequisites
-- **Python 3.8+**
-- **Streamlit**
-- **OpenCV**
-- **NumPy**
-- **Pillow**
+### 1. Clone the Repository:
 
-Install dependencies by running:
 ```bash
-pip install streamlit opencv-python-headless numpy pillow
-```
-Running the App
-Clone the repository and navigate to the project directory:
-```bash
-git clone https://github.com/your-username/sketch-magician.git
+git clone https://github.com/yourusername/sketch-magician.git
 cd sketch-magician
 ```
-Start the Streamlit app:
+### 2. Install the Dependencies:
+Create a virtual environment and install the required dependencies:
+```bash 
+pip install -r requirements.txt
 ```
+### 3. Run the App:
+Start the app using the following command:
+``` bash
 streamlit run app.py
 ```
-Visit http://localhost:8501 in your browser to access the app.
+This will launch the app in your default web browser.
 
-📄 Code Overview
-app.py: The main Streamlit app file, containing the UI and sketch conversion logic.
-convert_to_sketch(): Core function for creating the sketch effect using OpenCV.
-footer(): Function to render the footer with social media links.
+### How It Works
+1. **Upload an Image:** Select a photo in JPG or PNG format using the file uploader.
+2. **Adjust Sketch Settings:** Use the "Blur Intensity" slider to modify the pencil sketch's detail and look.
+3. **Preview the Sketch:** The sketch is updated in real-time as you adjust the settings.
+4. **Download the Sketch:** Once you are happy with the result, click the "Download Sketch Image" button to save the final pencil sketch.
+
+### Contributing
+Feel free to fork this repository, make improvements, and submit pull requests. We welcome any bug fixes or new feature suggestions!
 
 
-📝 Usage
-Upload an image in .jpg or .png format.
-Adjust the Blur Intensity slider to modify the sketch style.
-Download the resulting sketch with a single click.
-🧑‍💻 Developer Info
-Developed by: Gandham Mani Saketh
-LinkedIn: Gandham Mani Saketh
-GitHub: GANDHAMMANI
-Instagram: mr.pandapal
 
-🤝 Contributing
-Pull requests are welcome! If you have ideas for improving the app, please feel free to contribute. For major changes, open an issue to discuss your ideas.
-
-Thank you for checking out Sketch Magician! ✨
 
 
